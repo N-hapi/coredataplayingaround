@@ -9,6 +9,7 @@ import SwiftUI
 
 import CoreData
 
+//9:42
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 

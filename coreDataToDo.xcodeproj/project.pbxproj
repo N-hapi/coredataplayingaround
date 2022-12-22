@@ -13,6 +13,8 @@
 		54CCACB22947C30900553E14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CCACB12947C30900553E14 /* ContentView.swift */; };
 		54CCACB42947C30A00553E14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCACB32947C30A00553E14 /* Assets.xcassets */; };
 		54CCACB82947C30A00553E14 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54CCACB72947C30A00553E14 /* Preview Assets.xcassets */; };
+		54D3ECEE294F6E38002F05A3 /* AddToDoViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3ECED294F6E38002F05A3 /* AddToDoViews.swift */; };
+		54D3ECF0294FAC58002F05A3 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3ECEF294FAC58002F05A3 /* ContentView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		54CCACB32947C30A00553E14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54CCACB52947C30A00553E14 /* coreDataToDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = coreDataToDo.entitlements; sourceTree = "<group>"; };
 		54CCACB72947C30A00553E14 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		54D3ECED294F6E38002F05A3 /* AddToDoViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViews.swift; sourceTree = "<group>"; };
+		54D3ECEF294FAC58002F05A3 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				54CCACAA2947C30900553E14 /* coreDataToDoApp.swift */,
+				54D3ECEB294F6E1C002F05A3 /* View */,
 				54CCACAC2947C30900553E14 /* Persistence.swift */,
 				54CCACB12947C30900553E14 /* ContentView.swift */,
 				54CCACB32947C30A00553E14 /* Assets.xcassets */,
@@ -73,6 +78,15 @@
 				54CCACB72947C30A00553E14 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		54D3ECEB294F6E1C002F05A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54D3ECED294F6E38002F05A3 /* AddToDoViews.swift */,
+				54D3ECEF294FAC58002F05A3 /* ContentView2.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +161,8 @@
 			files = (
 				54CCACAB2947C30900553E14 /* coreDataToDoApp.swift in Sources */,
 				54CCACB02947C30900553E14 /* coreDataToDo.xcdatamodeld in Sources */,
+				54D3ECEE294F6E38002F05A3 /* AddToDoViews.swift in Sources */,
+				54D3ECF0294FAC58002F05A3 /* ContentView2.swift in Sources */,
 				54CCACB22947C30900553E14 /* ContentView.swift in Sources */,
 				54CCACAD2947C30900553E14 /* Persistence.swift in Sources */,
 			);
