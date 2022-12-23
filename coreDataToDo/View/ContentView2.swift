@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView2: View {
     // MARK: - properties
-
+    @Environment(\.managedObjectContext) var managedObjectContext
     @State private var showingAddTodoView: Bool = false
 
 
@@ -29,7 +29,7 @@ struct ContentView2: View {
                     Image(systemName: "plus")
                 }//: Add button
                     .sheet(isPresented: $showingAddTodoView){
-                        AddToDoViews()
+                        AddToDoViews().environment(\.managedObjectContext, self.managedObjectContext )
                     }
 
             )
@@ -41,6 +41,6 @@ struct ContentView2: View {
 
 struct ContentView2_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView2()
+        ContentView2().previewDevice("iphone 14 pro")
     }
 }

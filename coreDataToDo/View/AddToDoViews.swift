@@ -10,11 +10,16 @@ import SwiftUI
 struct AddToDoViews: View {
     // MARK: properties
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     @State private var name: String = ""
     @State private var priority: String = "Normal"
 
     let priorities = ["High", "Normal", "Low"]
+    
+    @State private var errorShowing: Bool = false
+    @State private var errorTitle: String = ""
+    @State private var errorMessage: String = ""
 
 // MARK: Body
     var body: some View {
@@ -31,7 +36,28 @@ struct AddToDoViews: View {
                     }.pickerStyle(SegmentedPickerStyle())
                     //MARK: - Save Button
                     Button(action: {
-                        print("save button pressed")
+                        if self.name != ""{
+                            print("save button pressed")
+                            let todo = Todo(context: self.managedObjectContext)
+                            todo.name = self.name
+                            todo.priority = self.priority
+                       
+                        
+                        
+                        do{
+                            try self.managedObjectContext.save()
+                            print("New todo: \(todo.name ?? ""), Priority: \(todo.priority ?? "")")
+                        }catch{
+                            print(error)
+                        }
+                        }else {
+                            self.errorShowing = true
+                            self.errorTitle = "invalide name"
+                            self.errorMessage = "enter something for the todo item"
+                            return
+                        }
+                        self.presentationMode.wrappedValue.dismiss()
+                        
                     }) {
                         Text("Save")
                     }//: Save button
@@ -43,6 +69,10 @@ struct AddToDoViews: View {
             .navigationBarItems(trailing: Button(action:{
                 self.presentationMode.wrappedValue.dismiss()
             }){Image(systemName: "xmark")})
+            .alert(isPresented: $errorShowing){
+                Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("ok")))
+                
+            }
         }//: Nabigation
         
     }
@@ -53,6 +83,6 @@ struct AddToDoViews: View {
 
 struct AddToDoViews_Previews: PreviewProvider {
     static var previews: some View {
-        AddToDoViews()
+        AddToDoViews().previewDevice("iphone 14 pro")
     }
 }
