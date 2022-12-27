@@ -83,6 +83,6 @@ struct AddToDoViews: View {
 
 struct AddToDoViews_Previews: PreviewProvider {
     static var previews: some View {
-        AddToDoViews().previewDevice("iphone 14 pro")
+        AddToDoViews().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext).previewDevice("iphone 14 pro")
     }
 }

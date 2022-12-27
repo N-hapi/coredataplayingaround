@@ -6,10 +6,16 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView2: View {
     // MARK: - properties
     @Environment(\.managedObjectContext) var managedObjectContext
+    
+    
+    @FetchRequest(entity: Todo.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Todo.name, ascending: true)]) var todos: FetchedResults<Todo>
+    
+    
     @State private var showingAddTodoView: Bool = false
 
 
@@ -17,8 +23,20 @@ struct ContentView2: View {
     var body: some View {
 
         NavigationView {
-            List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            List {
+                
+                ForEach(self.todos, id: \.self){
+                    todo in
+                    HStack{
+                        Text(todo.name ?? "Uknowns")
+                        
+                        Spacer()
+                        
+                        Text(todo.priority ?? "uknown")
+                        
+                    }
+                }//:foreach
+                
             }//: List
             .navigationBarTitle("Todo", displayMode: .inline)
                 .navigationBarItems(trailing:
@@ -41,6 +59,14 @@ struct ContentView2: View {
 
 struct ContentView2_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView2().previewDevice("iphone 14 pro")
+//        let context = (UIApplication.shared.delegate).PersistenceController.viewContext
+        let persistenceController = PersistenceController.shared
+        ContentView2().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        
+            //.environment(\.managedObjectContext, persistenceController.container.viewContext)
+//            .environment(\.managedObjectContext, context)
+            
+            
+            .previewDevice("iphone 14 pro")
     }
 }
