@@ -36,10 +36,11 @@ struct ContentView: View {
                         
                     }
                 }//:foreach
+                .onDelete(perform: deleteTodo)
                 
             }//: List
             .navigationBarTitle("Todo", displayMode: .inline)
-                .navigationBarItems(trailing:
+            .navigationBarItems(leading: EditButton(), trailing:
                     Button(action: {
                     // Show add todo view
                     self.showingAddTodoView.toggle()
@@ -53,7 +54,19 @@ struct ContentView: View {
             )
         }//: Navigation
     }
-    
+    private func deleteTodo(at offsets: IndexSet){
+        for index in offsets {
+            let todo = todos[index]
+            managedObjectContext.delete(todo)
+            do {
+                try managedObjectContext.save()
+            }
+            catch{
+                print(error)
+                
+            }
+        }
+    }
     
 }
 
