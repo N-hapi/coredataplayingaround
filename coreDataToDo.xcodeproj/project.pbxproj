@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54341499295F28EE001632BF /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54341498295F28EE001632BF /* EmptyListView.swift */; };
 		54CCACAB2947C30900553E14 /* coreDataToDoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CCACAA2947C30900553E14 /* coreDataToDoApp.swift */; };
 		54CCACAD2947C30900553E14 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CCACAC2947C30900553E14 /* Persistence.swift */; };
 		54CCACB02947C30900553E14 /* coreDataToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54CCACAE2947C30900553E14 /* coreDataToDo.xcdatamodeld */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		54341498295F28EE001632BF /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		54CCACA72947C30900553E14 /* coreDataToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coreDataToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54CCACAA2947C30900553E14 /* coreDataToDoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coreDataToDoApp.swift; sourceTree = "<group>"; };
 		54CCACAC2947C30900553E14 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				54D3ECED294F6E38002F05A3 /* AddToDoViews.swift */,
 				54D3ECEF294FAC58002F05A3 /* ContentView.swift */,
+				54341498295F28EE001632BF /* EmptyListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			files = (
 				54CCACAB2947C30900553E14 /* coreDataToDoApp.swift in Sources */,
 				54CCACB02947C30900553E14 /* coreDataToDo.xcdatamodeld in Sources */,
+				54341499295F28EE001632BF /* EmptyListView.swift in Sources */,
 				54D3ECEE294F6E38002F05A3 /* AddToDoViews.swift in Sources */,
 				54D3ECF0294FAC58002F05A3 /* ContentView.swift in Sources */,
 				54CCACB22947C30900553E14 /* ContentView2.swift in Sources */,
