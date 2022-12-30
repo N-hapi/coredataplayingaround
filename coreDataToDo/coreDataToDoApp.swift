@@ -9,12 +9,13 @@ import SwiftUI
 
 @main
 struct coreDataToDoApp: App {
-    let persistenceController = PersistenceController.shared
+    //let persistenceController = PersistenceController.shared
+    @StateObject private var dataController = PersistenceController()
 
     var body: some Scene {
         WindowGroup {
-            ContentView2()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContentView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

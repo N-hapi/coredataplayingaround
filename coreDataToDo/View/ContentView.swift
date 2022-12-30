@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView2: View {
+struct ContentView: View {
     // MARK: - properties
     @Environment(\.managedObjectContext) var managedObjectContext
     
@@ -53,20 +53,17 @@ struct ContentView2: View {
             )
         }//: Navigation
     }
+    
+    
 }
 
 // MARK: - preview
 
-struct ContentView2_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-//        let context = (UIApplication.shared.delegate).PersistenceController.viewContext
-        let persistenceController = PersistenceController.shared
-        ContentView2().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-        
-            //.environment(\.managedObjectContext, persistenceController.container.viewContext)
-//            .environment(\.managedObjectContext, context)
-            
-            
+
+        let persistenceController = PersistenceController.preview
+        ContentView().environment(\.managedObjectContext, persistenceController.container.viewContext)
             .previewDevice("iphone 14 pro")
     }
 }
